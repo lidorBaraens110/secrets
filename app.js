@@ -110,14 +110,10 @@ app.get("/secrets", (req, res) => {
 
     User.find({ "secret": { $ne: null } }, (err, foundUser) => {
         console.log(foundUser)
-        console.log("3")
         if (err) {
-            console.log("4")
             console.log(err)
         } else {
-            console.log("5")
             if (foundUser) {
-                console.log("6")
                 res.render("secrets", { userWithSecret: foundUser });
             }
         }
